@@ -1,0 +1,8 @@
+<mat-nav-list>
+
+  <div *ngFor="let user of users">
+    <app-user *ngIf="user.firstName !== undefined"[user]="user"></app-user>
+    <button *ngIf="user.firstName !== undefined" mat-button (click)="openDialog(user)">Delete</button>
+  </div>
+
+</mat-nav-list>

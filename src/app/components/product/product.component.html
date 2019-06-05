@@ -1,0 +1,30 @@
+<!--
+  <div class="img">
+  <img width="300" [src]="product.imageUrl" alt="Phone Picture">
+</div>
+
+<h1 class="name">{{product.name}}</h1>
+<h2 class="price">{{product.price | currency}}</h2>
+<button class="details" (click)="showDetails()">Details</button>
+<div *ngIf="details">
+  <p>{{product.details}}</p>
+</div>
+-->
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{product.name}}</mat-card-title>
+    <mat-card-subtitle>{{product.price | currency}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="product.imageUrl">
+  <mat-card-content>
+    <button mat-button color="primary" class="details" (click)="showDetails()"> Details </button>
+    <div *ngIf="details">
+        <p [@myfirstanimation]='state'>{{product.details}}</p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary">ADD TO CART</button>
+    <div class="flex-spacer"></div>
+  </mat-card-actions>
+</mat-card>

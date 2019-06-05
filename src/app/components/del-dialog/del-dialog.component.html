@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Do you want to delete?</h1>
+<div mat-dialog-content>
+  {{user.firstName}}
+</div>
+
+<div mat-dialog-actions> 
+  <button mat-button color="primary" [mat-dialog-close]="NO">NO</button>
+  <button mat-raised-button color="primary" (click)="yes()" [mat-dialog-close]="YES">YES</button>
+</div>
