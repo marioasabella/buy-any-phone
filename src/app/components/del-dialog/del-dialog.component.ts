@@ -10,7 +10,7 @@ import { User } from 'src/app/models/user';
 })
 export class DelDialogComponent implements OnInit {
 
-  user: User;
+  user: User; 
 
   constructor(public dialogRef: MatDialogRef<DelDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }

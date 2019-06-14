@@ -1,0 +1,42 @@
+<mat-card>
+  <mat-card-title>Payment Info</mat-card-title>
+  <mat-card-content>
+
+    <form [formGroup]="registerForm">
+
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Credit Card Number" formControlName="creditCardNumber" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.creditCardNumber.errors }" [(ngModel)]="payment.creditCardNumber"></textarea>
+        <div *ngIf="submitted && f.creditCardNumber.errors" class="invalid-feedback">
+          <mat-error *ngIf="f.creditCardNumber.errors.required">Credit Card Number is required</mat-error>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="CCV" formControlName="ccv" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.ccv.errors }" [(ngModel)]="payment.ccv"></textarea>
+        <div *ngIf="submitted && f.ccv.errors" class="invalid-feedback">
+          <mat-error *ngIf="f.ccv.errors.required">CCV is required</mat-error>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Date" formControlName="date" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.date.errors }" [(ngModel)]="payment.date"></textarea>
+        <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+          <mat-error *ngIf="f.date.errors.required">Date is required</mat-error>
+        </div>
+      </mat-form-field>
+
+
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" [disabled]="loading" routerLink="/payment-info">Continue</button>
+
+      </mat-card-actions>
+
+    </form>
+
+  </mat-card-content>
+
+</mat-card>

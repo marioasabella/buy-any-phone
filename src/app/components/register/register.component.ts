@@ -6,6 +6,7 @@ import { first } from 'rxjs/operators';
 import { AlertService } from '../../services/alert.service';
 import { UserService } from '../../services/user.service';
 import { AuthenticationService } from '../../services/authentication.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-register',
@@ -19,12 +20,14 @@ export class RegisterComponent implements OnInit {
   submitted = false;
 
   constructor(
-    
+
     private formBuilder: FormBuilder,
     private router: Router,
     private authenticationService: AuthenticationService,
     private userService: UserService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private snackBar: MatSnackBar
+    
   ) {
     // redirect to home if already logged in
     if (this.authenticationService.currentUserValue) {
@@ -33,13 +36,13 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      email: ['',[
+      email: ['', [
         Validators.required,
         Validators.email
       ]]
@@ -57,13 +60,15 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-   
+
     this.loading = true;
+    this.openSnackBar();
     this.userService.register(this.registerForm.value)
       .pipe(first())
       .subscribe(
         data => {
           this.alertService.success('Registration successful', true);
+          
           this.router.navigate(['/login-new']);
         },
         error => {
@@ -72,5 +77,15 @@ export class RegisterComponent implements OnInit {
         });
   }
 
-  
+  openSnackBar() {
+    const snackBarRef = this.snackBar.open('User Registered');
+
+    setTimeout(() => {
+      snackBarRef.dismiss();
+    }, 333);
+
+  }
+
+
+
 }

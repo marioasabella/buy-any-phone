@@ -1,0 +1,15 @@
+<mat-nav-list>
+
+  <div *ngFor="let product of products">
+    <app-admin-delete-product *ngIf="product.name !== undefined" [product]="product"></app-admin-delete-product>
+    <div class="buttons">
+      <button *ngIf="product.name !== undefined" mat-button (click)="openDialog(product)"
+        class="delButton">Delete</button>
+      <button *ngIf="product.name !== undefined" mat-button [routerLink]="['/editProduct',product.id]" color="primary"
+        class="editButton">Edit</button>
+    </div>
+    <br />
+    <br />
+  </div>
+
+</mat-nav-list>

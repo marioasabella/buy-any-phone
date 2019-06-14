@@ -1,3 +1,46 @@
-<p>
-  cart works!
-</p>
+<div class="container">
+  <h3>Cart</h3>
+  <mat-toolbar class="cart-header highlight">
+    <div class="item">Item</div>
+    <div class="price">Price</div> 
+    <div class="quantity">Qty</div>
+    <div class="total">Total</div>
+  </mat-toolbar>
+  <div class="no-items" *ngIf="cartArray.length === 0">No items in the cart. <a routerLink="/productsList">Keep shopping!</a></div>
+
+  <mat-card *ngFor="let item of cartArray; let i = index" class="product">
+    <div class="item">
+        {{item.name}}
+    </div>
+    <div class="price">{{item.price | currency}}</div>
+    <div class="quantity-label">
+        <input matInput type="number" placeholder="1" [min]="1" [max]="getProductQuantity(item.name)" class="quantity2" [(ngModel)]="item.quantity">
+    </div>
+    
+    <div class="total2">{{item.price * item.quantity | currency}}</div>
+    <div class="remove">
+        <button mat-button color="primary" (click)="delOrder(i)">Remove</button>
+    </div>
+  </mat-card>
+  
+  <mat-card class="checkout-cta" *ngIf="cartArray.length > 0">
+      <h4 class="subtotal-label">Subtotal</h4>
+      <h4 class="subtotal">{{calculateCartTotal(cartArray) | currency}}</h4>
+      <button mat-raised-button color="primary" class="subtotalButton" routerLink="/shipping" >Checkout</button>
+  </mat-card>
+
+</div>
+
+<!--
+<div>
+    <ul>
+        <li *ngFor="let order of orders | async; let i = index">
+            <p> {{ order.id }}</p>
+            <p> {{ order.name }}</p>
+            <p> {{ order.quantity }}</p>
+            <p> {{ order.price | currency }}</p>
+            <button mat-button color="primary" (click)="delOrder(i)">Remove</button>
+        </li>
+      </ul>
+</div>
+-->

@@ -10,6 +10,12 @@
     min-width: 200px;
 }
 
+.welcomeFont {
+    font-size: .8em;
+    font-family: Roboto Mono,monospace;
+    margin-left: 55px;
+}
+
 .container .mat-drawer .mat-button {
     display: block;
     width: 100%;
@@ -18,4 +24,58 @@
 
 .spacer {
     flex: 1 1 auto;
+}
+
+.cart-counter {
+    bottom: 2px;
+    color: white;
+    font-size: 8px;
+    pointer-events: none;
+    position: absolute;
+    right: 82px;
+
+}
+
+.cart-counter-2 {
+    bottom: 2px;
+    color: white;
+    font-size: 8px;
+    pointer-events: none;
+    position: absolute;
+    right: 80px;
+
+}
+
+.searchNav {
+
+    margin-right: 0;
+    margin-left: 15px;
+    display: inline-block;
+    font-size: .8em;
+    list-style-type: none;
+    text-align: center;
+    white-space: nowrap;
+    font-family: Roboto Mono,monospace;
+
+    .matIcon{
+        display: inline-block;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        height: 24px;
+        width: 24px;
+        list-style-type: none;
+        text-align: -webkit-match-parent;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+    }
 }

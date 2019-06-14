@@ -1,0 +1,17 @@
+<mat-form-field class="search-big">
+  <input matInput placeholder="Search Products"  
+    [(ngModel)]="searchTerm"/>
+</mat-form-field>
+
+
+
+
+<mat-nav-list *ngIf='searchTerm !== ""'>
+
+    <div *ngFor="let product of products | productFilter:searchTerm" class="list">
+      
+        <app-product [product]="product"></app-product>
+  
+    </div>
+  
+</mat-nav-list>

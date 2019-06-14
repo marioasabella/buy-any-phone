@@ -6,7 +6,7 @@ import { User } from '../../models/user';
 import { AuthenticationService } from '../../services/authentication.service';
 import { AlertService } from '../../services/alert.service';
 
-@Component({
+@Component({ 
   selector: 'app-login-new',
   templateUrl: './login-new.component.html',
   styleUrls: ['./login-new.component.scss']
@@ -63,7 +63,9 @@ export class LoginNewComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          this.router.navigate(['/productsList']);
+          if(JSON.parse(localStorage.getItem('currentUser'))) {
+            this.router.navigate(['/productsList']);
+          }
         },
         error => {
           this.alertService.error(error);

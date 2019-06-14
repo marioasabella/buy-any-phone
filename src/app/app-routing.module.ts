@@ -9,17 +9,28 @@ import { RegisterComponent } from './components/register/register.component';
 //import { AppComponent } from './app.component';
 import { LoginNewComponent } from './components/login-new/login-new.component';
 import { Role } from './models/role';
+import { componentFactoryName } from '@angular/compiler';
+import { CartComponent } from './components/cart/cart.component';
+import { AdminAddProductsComponent } from './components/admin-add-products/admin-add-products.component';
+import { AdminAddUsersComponent } from './components/admin-add-users/admin-add-users.component';
+import { AdminDeleteProductsComponent } from './components/admin-delete-products/admin-delete-products.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { SearchComponent } from './components/search/search.component';
+import { AdminEditProductComponent } from './components/admin-edit-product/admin-edit-product.component';
+import { AdminEditUserComponent } from './components/admin-edit-user/admin-edit-user.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
+import { PaymentInfoComponent } from './components/payment-info/payment-info.component';
 
 
 const routes: Routes = [
   {
     path:'',
-    component: LoginNewComponent//AppComponent
+    component: ProductsListComponent//LoginNewComponent//AppComponent
   },
   {
     path: 'productsList',
     component: ProductsListComponent,
-    canActivate: [AuthGuard]
+    
   },
   {
     path: 'usersList',
@@ -41,7 +52,58 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
     canActivate: [NotAuthGuard]
+  },
+  {
+    path: 'cart',
+    component: CartComponent
+  },
+  {
+    path: 'addProducts',
+    component: AdminAddProductsComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+  },
+  {
+    path: 'addUsers',
+    component: AdminAddUsersComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+  },
+  {
+    path: 'deleteProducts',
+    component: AdminDeleteProductsComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+  },
+  {
+    path: 'product-detail/:id',
+    component: ProductDetailComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
+  },
+  {
+    path: 'editProduct/:id',
+    component: AdminEditProductComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+  },
+  {
+    path: 'editUser/:id',
+    component: AdminEditUserComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+  },
+  {
+    path: 'shipping',
+    component: ShippingComponent
+  },
+  {
+    path: 'payment-info',
+    component: PaymentInfoComponent
   }
+ 
   // otherwise redirect to home
   /*
   {

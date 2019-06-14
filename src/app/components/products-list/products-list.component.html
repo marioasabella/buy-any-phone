@@ -1,8 +1,9 @@
 <mat-nav-list>
-      
-  <div *ngFor="let product of products">
+
+  <div *ngFor="let product of products" class="list">
+    
       <app-product [product]="product"></app-product>
-      <br/>
+
   </div>
- 
+
 </mat-nav-list>

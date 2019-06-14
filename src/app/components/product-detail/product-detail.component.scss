@@ -1,0 +1,90 @@
+.mat-card {
+    height: 80%;
+    width: 95%;
+    margin: 15px;
+    display: flex;
+   
+}
+
+.mat-card-actions {
+    display: flex;
+}
+
+.mat-card-actions .flex-spacer {
+    width: 100%;
+}
+
+
+.mat-card-image{
+    position: relative;
+    top: 10%;
+    -webkit-box-direction: normal;
+
+    width: 50%;
+    height: 77%;
+
+}
+
+.product-description {
+    padding: 20px;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    font-family: Roboto Mono,monospace;
+    -webkit-box-direction: normal;
+    color: rgba(0,0,0,.87);
+}
+
+.mat-card-title {
+    font-family: Roboto Mono,monospace;
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    -webkit-box-direction: normal;
+}
+
+.mat-card-subtitle {
+    font-family: Roboto Mono,monospace;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    -webkit-box-direction: normal;
+    color: rgba(0,0,0,.87);
+}
+
+.mat-card-content {
+    font-family: Roboto Mono,monospace;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    -webkit-box-direction: normal;
+    color: rgba(0,0,0,.87);
+}
+
+.quantity-label {
+    color: #777;
+    transform: translateY(-2px);
+    display: inline-block;
+    font-family: Roboto Mono,monospace;
+    -webkit-box-direction: normal;
+}
+
+.quantity {
+   width: 35px;
+   display: inline-block;
+   background-color:  gainsboro;
+   position: relative;
+   text-align: left;
+   font-family: Roboto Mono,monospace;
+   -webkit-box-direction: normal;
+   color: rgba(0,0,0,.87);
+}
+

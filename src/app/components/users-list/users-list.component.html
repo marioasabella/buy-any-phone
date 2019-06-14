@@ -1,8 +1,15 @@
 <mat-nav-list>
 
   <div *ngFor="let user of users">
-    <app-user *ngIf="user.firstName !== undefined"[user]="user"></app-user>
-    <button *ngIf="user.firstName !== undefined" mat-button (click)="openDialog(user)">Delete</button>
+    <app-user *ngIf="user.firstName !== undefined" [user]="user"></app-user>
+    <div class="buttons">
+      <button *ngIf="user.firstName !== undefined" mat-button (click)="openDialog(user)"
+        class="delButton">Delete</button>
+      <button *ngIf="user.firstName !== undefined" mat-button [routerLink]="['/editUser', user.id]" color="primary"
+        class="editButton">Edit</button>
+    </div>
+    <br />
+    <br />
   </div>
 
 </mat-nav-list>

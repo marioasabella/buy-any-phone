@@ -11,23 +11,31 @@
     <div class="sidenav-content">
         <mat-toolbar color="primary">
           <mat-toolbar-row>
-            <button mat-icon-button *ngIf="currentUser" (click)="drawer.toggle()">
+            <button mat-icon-button  (click)="drawer.toggle()">
               <mat-icon>menu</mat-icon>
             </button>
-            <span>BuyAnyPhone</span>
-            <mat-icon>stay_primary_portrait</mat-icon>
+            <span routerLink="/productsList" >BuyAnyPhone</span>
+            <mat-icon routerLink="/productsList" >stay_primary_portrait</mat-icon>
             <span class="spacer"></span>
             <button *ngIf ="!currentUser" color="" mat-button routerLink="/login-new">Login</button>
-            <button *ngIf ="isAdmin()" color="" mat-button routerLink="/usersList">Admin</button>
+            <button *ngIf ="isAdmin()" color="" mat-button routerLink="/addProducts">Add Products</button>
+            <button *ngIf ="isAdmin()" color="" mat-button routerLink="/addUsers">Add Users</button>
+            <button *ngIf ="isAdmin()" color="" mat-button routerLink="/deleteProducts">Delete Products</button>
+            <button *ngIf ="isAdmin()" color="" mat-button routerLink="/usersList">Delete Users</button>
+            <span class="welcomeFont" *ngIf ="!isAdmin() && currentUser">Welcome {{currentUser.firstName | uppercase}}!</span> 
             <button *ngIf ="currentUser" (click)= "logout()" color="" mat-button routerLink="/login-new">Logout</button>
             <button *ngIf ="!currentUser" color="" mat-button routerLink="/register">Sign Up</button>
-            <button mat-icon-button *ngIf="currentUser" [matMenuTriggerFor]="menu">
+            <button mat-icon-button class="searchNav" routerLink="/search">
+              <mat-icon class="matIcon">search</mat-icon> 
+            </button>
+            <button mat-icon-button  [matMenuTriggerFor]="menu">
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu  #menu="matMenu">
-              <button mat-menu-item disabled>
+              <button mat-menu-item routerLink="/cart">
                 <mat-icon>shopping_cart</mat-icon>
-                <span>Cart</span>
+                <span [class]="cartItems <= 9 ?'cart-counter':'cart-counter-2'" *ngIf="cartItems > 0"> {{ cartItems }}</span>
+                <span> Cart</span>
               </button>
             </mat-menu>
           </mat-toolbar-row>

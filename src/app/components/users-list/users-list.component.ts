@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
-import { BackendService } from '../../services/backend.service'; 
+import { BackendService } from '../../services/backend.service';
 import { UserService } from '../../services/user.service';
 import { first } from 'rxjs/operators';
 import { MatDialog } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 import { DelDialogComponent } from '../del-dialog/del-dialog.component';
 
 
@@ -19,14 +20,15 @@ export class UsersListComponent implements OnInit {
   constructor(
     private backendService: BackendService,
     private userService: UserService,
-    public dialog: MatDialog
-    ) { }
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
+  ) { }
 
   ngOnInit() {
     this.getUsers();
   }
 
-  getUsers(): void{
+  getUsers(): void {
     this.backendService.getUsers().subscribe((result: User[]) => {
       this.users = result;
     });
@@ -40,18 +42,23 @@ export class UsersListComponent implements OnInit {
 
   private loadAllUsers() {
     this.userService.getAll().pipe(first()).subscribe(users => {
-        this.users = users;
+      this.users = users;
     });
   }
-  
+
   openDialog(user: User): void {
     let dialogRef = this.dialog.open(DelDialogComponent, {
-      data:{user}
+      data: { user }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result == "Yes") {
+      if (result == "Yes") {
         this.deleteUser(user.id);
+        const snackBarRef = this.snackBar.open('User Deleted');
+
+        setTimeout(() => {
+          snackBarRef.dismiss();
+        }, 777)
       }
     });
   }

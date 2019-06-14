@@ -1,0 +1,32 @@
+<mat-card>
+  <!--product.imageUrl-->
+  <img mat-card-image [src]="product?.imageUrl">
+
+  <div class="product-description">
+    <mat-card-title>
+      <h2>{{product?.name}}</h2>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <h2>{{product?.price | currency}}</h2>
+    </mat-card-subtitle>
+    <mat-card-content>
+      {{product?.details}}
+    </mat-card-content>
+    <div class="quantity-label">Qty:</div><br/>
+    <input matInput type="number" placeholder="1" min="1" max="product?.quantity" class="quantity" [(ngModel)]="quantity">
+    <br/>
+    <br/>
+    <mat-card-actions>
+      <button  mat-raised-button color="primary">
+        <span *ngIf="!addedToCart(product)" (click)="addToCart()">Add to </span>
+        <span *ngIf="addedToCart(product)" routerLink="/cart">Update </span> 
+        <span>Cart</span>
+     </button>
+    </mat-card-actions>
+    
+
+  </div>
+
+ 
+
+</mat-card>

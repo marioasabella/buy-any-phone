@@ -57,6 +57,20 @@ import { DelDialogComponent } from './components/del-dialog/del-dialog.component
 import { AnimateComponent } from './components/animate/animate.component';
 import { CartComponent } from './components/cart/cart.component';
 
+import { StoreModule } from '@ngrx/store';
+import { cartReducer } from './reducers/cart.reducer';
+import { AdminAddProductsComponent } from './components/admin-add-products/admin-add-products.component';
+import { AdminAddUsersComponent } from './components/admin-add-users/admin-add-users.component';
+import { AdminDeleteProductsComponent } from './components/admin-delete-products/admin-delete-products.component';
+import { AdminDeleteProductComponent } from './components/admin-delete-product/admin-delete-product.component';
+import { AdminDelDialogComponent } from './components/admin-del-dialog/admin-del-dialog.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { SearchComponent } from './components/search/search.component';
+import { ProductFilterPipe } from './pipes/product-filter.pipe';
+import { AdminEditProductComponent } from './components/admin-edit-product/admin-edit-product.component';
+import { AdminEditUserComponent } from './components/admin-edit-user/admin-edit-user.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
+import { PaymentInfoComponent } from './components/payment-info/payment-info.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +85,19 @@ import { CartComponent } from './components/cart/cart.component';
     LoginNewComponent,
     DelDialogComponent,
     AnimateComponent,
-    CartComponent
+    CartComponent,
+    AdminAddProductsComponent,
+    AdminAddUsersComponent,
+    AdminDeleteProductsComponent,
+    AdminDeleteProductComponent,
+    AdminDelDialogComponent,
+    ProductDetailComponent,
+    SearchComponent,
+    ProductFilterPipe,
+    AdminEditProductComponent,
+    AdminEditUserComponent,
+    ShippingComponent,
+    PaymentInfoComponent
     
     
     
@@ -83,6 +109,9 @@ import { CartComponent } from './components/cart/cart.component';
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
+    StoreModule.forRoot({
+      order: cartReducer
+    }),
 
     // Material Components
     BrowserAnimationsModule,
@@ -120,7 +149,8 @@ import { CartComponent } from './components/cart/cart.component';
   ],
   providers: [],
   entryComponents: [ 
-    DelDialogComponent 
+    DelDialogComponent,
+    AdminDelDialogComponent 
   ],
   bootstrap: [AppComponent]
 })

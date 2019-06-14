@@ -3,37 +3,58 @@
     {
       "id": 1,
       "name": "Samsung Galaxy Fold",
-      "price": 2000,
+      "price": "1999",
       "details": "The Galaxy Fold contains two displays, its front cover contains a small, 4.6-inch display in the center designed for one-handed use, and the device can fold open to expose a 7.3-inch display. Samsung rated the fold mechanism as supporting up to 200,000 uses. The tablet screen contains a large notch in the top-right corner, and is coated with a custom multi-layer laminate in lieu of glass. Its power button contains a fingerprint reader. Samsung did not state which system-on-chip it uses in the Galaxy Fold, beyond that it is a \"state-of-the-art\" CPU with a 7 nanometer production process, contains 12 GB of RAM, and has 512 GB of non-expandable storage. Teardowns later revealed that it was the Qualcomm Snapdragon 855, which is used in all regions (unlike other Samsung phones that have been split between Snapdragon and Samsung's in-house Exynos chips depending on the market).The Galaxy Fold will be sold with a 5G variant.",
-      "imageUrl": "../assets/img/SamsungGalaxyFold.jpg"
+      "imageUrl": "../assets/img/SamsungGalaxyFold.jpg",
+      "quantity": "99"
     },
     {
       "id": 2,
       "name": "iPhone XS",
       "price": 999,
       "details": "The XS has a design visually near-identical to the X but includes upgraded hardware, featuring the A12 Bionic chip built with a 7 nanometer process. It also features a 5.85-inch (149 mm) OLED display and contains dual 12-megapixel rear cameras and one 7-megapixel front-facing camera. The XS Max features the same hardware and cameras, but has a larger 6.46-inch (164 mm) OLED display and battery (3,174mAh). It was also noted by the media that the XS received a smaller battery than that of the X (dropping to 2,658 mAh from 2,716 mAh). The XS battery is a new single-cell L-shaped battery, while the iPhone XS Max battery remains two cells like the iPhone X.",
-      "imageUrl": "../assets/img/iphonexs.png"
+      "imageUrl": "../assets/img/iphonexs.png",
+      "quantity": "99"
     },
     {
       "id": 3,
       "name": "OnePlus6t",
       "price": 555,
       "details": "The OnePlus 6T comes with a 6.41-inch AMOLED FHD+ display, a Snapdragon 845 processor, and a 3700 mAh battery (larger than its predecessor). It has a 16-megapixel and a 20-megapixel camera on the back, and another 16-megapixel one in the front. This device comes with different variations of storage (128 GB, 256GB) and RAM. For biometrics, the OnePlus 6T has an in-display fingerprint sensor, in addition to Face Unlock. It ships with OnePlus customized version of Android, OxygenOS, which is based on Android Pie. The OnePlus 6T supports 4G, LTE, Dual VoLTE, 3G, 2G and CDMA.",
-      "imageUrl": "../assets/img/oneplus6t.jpg"
+      "imageUrl": "../assets/img/oneplus6t.jpg",
+      "quantity": "99"
     },
     {
       "id": 4,
       "name": "Google Pixel 3",
       "price": 799,
       "details": "The Pixel 3 and Pixel 3 XL come in three colors: \"Just Black\", \"Clearly White\", and \"Not Pink\". The Pixel 3 bezels are reduced greatly from the Pixel 2, which was criticized for its large bezels. However, the Pixel 3 XL has a large notch on its display. The notch can be blacked out in developer options. Pixel 3 and Pixel 3 XL ship with Android 9.0 \"Pie\" at launch. Both phones will get three years of software updates and security updates guaranteed by Google. The Pixel 3 lacks the voice-unlock feature available on previous Pixel devices.",
-      "imageUrl": "../assets/img/googlePixel3.jpg"
+      "imageUrl": "../assets/img/googlePixel3.jpg",
+      "quantity": "99"
     },
     {
       "id": 5,
       "name": "Samsung Galaxy S10",
       "price": 899,
       "details": "The S10 range ships with Android 9.0 Pie . They are the first Samsung smartphones to ship with a major revamp of Samsungs  Android user experience known as One UI. A main design element of One UI is intentional repositioning of key user interface elements in stock apps to improve usability on large screens. Many apps include large headers that push the beginning of content towards the center of the display, while navigation controls and other prompts are often displayed near the bottom of the display instead.",
-      "imageUrl": "../assets/img/SamsungGalaxyS10.png"
+      "imageUrl": "../assets/img/SamsungGalaxyS10.png",
+      "quantity": "99"
+    },
+    {
+      "name": "Huawei P9",
+      "price": "555",
+      "details": "afsafasdfafdsafasdfafdsa",
+      "imageUrl": "https://zdnet4.cbsistatic.com/hub/i/r/2016/07/04/b3eafeea-26a9-4453-9495-b26263a9b8f5/thumbnail/770x578/25e3edf626d4d47f0dde0f452a47bfee/huawei-p9-plus-header.jpg",
+      "quantity": "99",
+      "id": 6
+    },
+    {
+      "name": "Xiaomi Redmi Note 7S",
+      "price": "111",
+      "details": "dwdafsdfaskhfjadfklalkdhfajhlfjdahfldshfka33",
+      "imageUrl": "https://i.gadgets360cdn.com/products/large/1558334776_635_Redmi_note_7S_Main_DB.jpg",
+      "quantity": "99",
+      "id": 7
     }
   ],
   "users": [
@@ -41,9 +62,9 @@
       "id": 1,
       "username": "1",
       "password": "1",
-      "firstName": "Gezim",
-      "lastName": "Cani",
-      "email": "gezimcani@gmail.com",
+      "firstName": "Mario",
+      "lastName": "Admin",
+      "email": "admin@gmail.com",
       "role": "Admin"
     },
     {
@@ -70,20 +91,87 @@
       "username": "mario",
       "password": "mario1",
       "email": "mario.asabella@gmail.com",
-      "id": 6
+      "id": 4
     }
   ],
   "orders": [
     {
       "id": 1,
       "name": "Samsung Galaxy Fold",
-      "price": 2000
-      
+      "price": 2000,
+      "quantity": 3,
+      "total": 1
     }
   ],
   "loginLogs": [
-   
+    {
+      "username": "mario",
+      "password": "mario1",
+      "id": 1
+    },
+    {
+      "username": "mario",
+      "password": "mario1",
+      "id": 2
+    },
+    {
+      "username": "1",
+      "password": "1",
+      "id": 3
+    },
+    {
+      "username": "1",
+      "password": "1",
+      "id": 4
+    },
+    {
+      "username": "1",
+      "password": "1",
+      "id": 5
+    },
+    {
+      "username": "mario",
+      "password": "mario1",
+      "id": 6
+    },
+    {
+      "username": "1",
+      "password": "1",
+      "id": 7
+    },
+    {
+      "username": "anela",
+      "password": "anela1",
+      "id": 8
+    },
+    {
+      "username": "1",
+      "password": "1",
+      "id": 9
+    },
+    {
+      "username": "1",
+      "password": "1",
+      "id": 10
+    },
+    {
+      "username": "1",
+      "password": "1",
+      "id": 11
+    },
+    {
+      "username": "mario",
+      "password": "mario1",
+      "id": 12
+    },
+    {
+      "username": "1",
+      "password": "1",
+      "id": 13
+    }
   ],
+  "shipping": [],
+  "payment-info": [],
   "profile": {
     "name": "typicode"
   }

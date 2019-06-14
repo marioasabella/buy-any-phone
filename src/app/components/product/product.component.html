@@ -11,20 +11,24 @@
 </div>
 -->
 
-<mat-card>
-  <mat-card-header>
+<mat-card [routerLink]="['/product-detail',product.id]">
+  <mat-card-header >
     <mat-card-title>{{product.name}}</mat-card-title>
     <mat-card-subtitle>{{product.price | currency}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="product.imageUrl">
+  <img mat-card-image [src]="product.imageUrl" >
   <mat-card-content>
-    <button mat-button color="primary" class="details" (click)="showDetails()"> Details </button>
+    <button mat-button color="primary" class="details" > Details </button>
     <div *ngIf="details">
-        <p [@myfirstanimation]='state'>{{product.details}}</p>
+      <p [@myfirstanimation]='state'>{{product.details}}</p>
     </div>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button color="primary">ADD TO CART</button>
+    <button mat-button color="primary">
+      <span *ngIf="!addedToCart(product)">Add to </span>
+      <span *ngIf="addedToCart(product)" routerLink="/cart">Update </span>
+      <span>Cart</span>
+    </button>
     <div class="flex-spacer"></div>
   </mat-card-actions>
 </mat-card>

@@ -18,10 +18,10 @@ export class UserService {
     return this.http.get(`http://localhost:3000/users/${id}`);
   }
 
-  getByUserName(username: String) {
+  getByUserName(username: String) { 
     return this.http.get(`http://localhost:3000/users?username=${username}`);
   }
-
+ 
   register(user: User) {
     return this.http.post('http://localhost:3000/users', user);
   }
